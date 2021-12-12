@@ -1,6 +1,7 @@
 variable "dynamodb_table_name" {
-    type = string
-    description = "Name of the table to create in DynamoDB"
+  type        = string
+  description = "Name of the table to create in DynamoDB"
+  default     = "Orders"
 }
 
 variable "dynamodb_read_capacity" {

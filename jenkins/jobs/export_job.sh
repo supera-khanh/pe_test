@@ -2,6 +2,6 @@
 
 echo "\033[0;33m exporting Job: sample-app-build-and-deploy to ${PWD}/exported_config.xml \033[0m"
 
-container_id=$(docker ps | grep "sa-platform-engineer-code-test_jenkins" | awk '{print $1}')
+container_id=$(docker ps | grep "pe_test_jenkins" | awk '{print $1}')
 
 docker cp ${container_id}:var/jenkins_home/jobs/sample-app-build-and-deploy/config.xml ${PWD}/exported_config.xml
