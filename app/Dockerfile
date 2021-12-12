@@ -10,4 +10,4 @@ USER demo-app
 EXPOSE 8080
 
 ENTRYPOINT [ "java", "-jar", "/opt/lib/localstack-demo-0.0.1-SNAPSHOT.jar"]
-CMD ["--test.data.file.path=testData.json", "--amazon.dynamodb.endpoint=http://localhost:4566"]
+CMD ["--test.data.file.path=./testData.json", "--amazon.dynamodb.endpoint=http://localhost:4566"]

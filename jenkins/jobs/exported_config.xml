@@ -47,12 +47,14 @@
             steps {
                 sh &quot;&quot;&quot;
                     echo &quot;Build step&quot;
+                    cd /src/app
+                    docker build -t sa-code-test:latest .
                 &quot;&quot;&quot;
             }
         }
         stage(&apos;Docker Deploy&apos;) {
             steps {
-                sh &apos;echo &quot;docker run -d --network sa-platform-engineer-code-test_sa-code-test -p 8085:8080 sa-code-test:latest&quot;&apos;
+                sh &apos;echo &quot;docker run -d --network pe_test_sa-code-test -p 8085:8080 sa-code-test:latest&quot;&apos;
             }
         }
     }

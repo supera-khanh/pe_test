@@ -15,6 +15,8 @@
 1. notes around the jenkins bit references `src` but there's no such directory -- the sample jenkins config references the src directory so we'll have to update it as necessary, or maybe put some symlinks in.
 1. should we use groovy?
 1. jenkins reset instruction is incorrect - wrong volume name
-1. the stash doesn't work - maybe because it's a mapped volume. we have to use the local version instead.
+1. BUG: the stash doesn't work - maybe because it's a mapped volume. we have to use the local version instead. 
 1. the `export_job.sh` script is incorrectly setup with the wrong container name
 
+**part 4**
+1. the jenkins job is updated with the expected scripts but the container doesn't work, which means that one of the above parts is not entirely correct. this will take additional time to debug.

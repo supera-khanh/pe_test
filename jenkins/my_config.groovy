@@ -19,12 +19,14 @@ pipeline {
             steps {
                 sh """
                     echo "Build step"
+                    cd /src/app
+                    docker build -t sa-code-test:latest .
                 """
             }
         }
         stage('Docker Deploy') {
             steps {
-                sh 'echo "docker run -d --network sa-platform-engineer-code-test_sa-code-test -p 8085:8080 sa-code-test:latest"'
+                sh 'echo "docker run -d --network pe_test_sa-code-test -p 8085:8080 sa-code-test:latest"'
             }
         }
     }
