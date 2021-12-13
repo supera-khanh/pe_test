@@ -54,7 +54,10 @@
         }
         stage(&apos;Docker Deploy&apos;) {
             steps {
-                sh &apos;echo &quot;docker run -d --network pe_test_sa-code-test -p 8085:8080 sa-code-test:latest&quot;&apos;
+                sh &apos;echo &quot;Deploying container&quot;&apos;
+                sh &apos;docker stop $(docker ps -a | grep sa-code-test | cut -d &quot; &quot; -f 1) || true&apos;
+                sh &apos;docker rm $(docker ps -a | grep sa-code-test | cut -d &quot; &quot; -f 1) || true&apos;
+                sh &apos;docker run -d --network pe_test_sa-code-test -p 8085:8080 sa-code-test:latest&apos;
             }
         }
     }

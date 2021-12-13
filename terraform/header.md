@@ -21,6 +21,8 @@ aws --profile sa-code-test --endpoint-url=http://localhost:4566 dynamodb list-ta
 
 The above is for localstack deployments. Replace the endpoint url as necessary.
 
+**BUG**: the above command does not return the table data. Localstack cannot see the table that terraform builds.
+
 ## Terraform-docs
 
 DO not update this README directly. Update the header.md file and then run the following command:

@@ -26,7 +26,10 @@ pipeline {
         }
         stage('Docker Deploy') {
             steps {
-                sh 'echo "docker run -d --network pe_test_sa-code-test -p 8085:8080 sa-code-test:latest"'
+                sh 'echo "Deploying container"'
+                sh 'docker stop $(docker ps -a | grep sa-code-test | cut -d " " -f 1) || true'
+                sh 'docker rm $(docker ps -a | grep sa-code-test | cut -d " " -f 1) || true'
+                sh 'docker run -d --network pe_test_sa-code-test -p 8085:8080 sa-code-test:latest'
             }
         }
     }
