@@ -1,5 +1,5 @@
 #!/bin/bash -e
-source .env
+#source .env
 
 AWS_PROFILE_NAME="sa-code-test"
 
